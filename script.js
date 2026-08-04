@@ -8,6 +8,12 @@ async function updateSubscribers() {
     document.getElementById("subscriberCount").textContent =
       data.subscribers + " abonnés";
 
+    document.getElementById("channelName").textContent =
+      data.channelName;
+
+    document.getElementById("avatar").src =
+      data.avatar;
+
   } catch (error) {
     document.getElementById("subscriberCount").textContent =
       "Erreur de chargement";
