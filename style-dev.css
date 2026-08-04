@@ -43,4 +43,28 @@ body {
      1px -1px 0 black,
     -1px  1px 0 black,
      1px  1px 0 black;
+
+  display: flex;
+  overflow: hidden;
+  height: 50px;
+}
+
+.digit-container {
+  display: flex;
+  overflow: hidden;
+  height: 50px;
+}
+
+.digit {
+  width: 28px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.digit span {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
 }
