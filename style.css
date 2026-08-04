@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background: transparent;
+  font-family: Arial, sans-serif;
+}
+
+.widget {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+#avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+}
+
+#channelName {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#subscriberCount {
+  color: #FF0033;
+  font-size: 42px;
+  font-weight: bold;
+}
