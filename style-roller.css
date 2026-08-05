@@ -1,49 +1,30 @@
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
-  font-family: Arial, sans-serif;
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#222;
+    font-family:Arial,sans-serif;
 }
 
-#counter {
-  font-size: 80px;
-  font-weight: bold;
-  color: white;
+.digit-window{
+    width:70px;
+    height:100px;
+    overflow:hidden;
+    border:2px solid transparent;
 }
 
-.digit-window {
-  width: 60px;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
+.digit-strip{
+    transition:transform .8s ease;
 }
 
-.digit-container {
-  position: relative;
-  width: 60px;
-  height: 200px;
-  transform: translateY(-100px);
-  transition: transform 0.8s ease;
-}
-
-.digit {
-  width: 60px;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-}
-
-.new {
-  height: 100px;
-}
-
-.old {
-  height: 100px;
-}
-
-.digit-container.move {
-  transform: translateY(0);
+.digit{
+    width:70px;
+    height:100px;
+    line-height:100px;
+    text-align:center;
+    color:white;
+    font-size:80px;
+    font-weight:bold;
 }
