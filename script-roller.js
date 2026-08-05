@@ -19,6 +19,6 @@ function changeDigit(from, to) {
 
 setTimeout(() => {
 
-  changeDigit(3, 4);
+changeDigit(3, 7);
 
 }, 2000);
