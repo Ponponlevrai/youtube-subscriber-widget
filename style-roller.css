@@ -1,1 +1,18 @@
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#222;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
 
+#counter{
+    display:flex;
+    gap:4px;
+    font-size:80px;
+    font-weight:bold;
+    color:white;
+}
