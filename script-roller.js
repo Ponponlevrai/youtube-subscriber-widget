@@ -1,35 +1,24 @@
-const container = document.querySelector(".digit-container");
-const oldDigit = document.querySelector(".old");
-const newDigit = document.querySelector(".new");
+const counter = document.getElementById("counter");
 
-let currentDigit = 3;
+function changeDigit(from, to) {
 
+  counter.innerHTML = `
+    <div class="digit-window">
+      <div class="digit-container">
+        <div class="digit new">${to}</div>
+        <div class="digit old">${from}</div>
+      </div>
+    </div>
+  `;
 
-function changeDigit(to) {
+  const container = document.querySelector(".digit-container");
 
-  oldDigit.textContent = currentDigit;
-  newDigit.textContent = to;
-
-  container.classList.remove("move");
-
-  void container.offsetWidth;
-
-  container.classList.add("move");
-
-  currentDigit = to;
+  requestAnimationFrame(() => {
+    container.classList.add("move");
+  });
 }
 
 
 setTimeout(() => {
-  changeDigit(7);
+  changeDigit(3, 4);
 }, 2000);
-
-
-setTimeout(() => {
-  changeDigit(4);
-}, 4000);
-
-
-setTimeout(() => {
-  changeDigit(9);
-}, 6000);
