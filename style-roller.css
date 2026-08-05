@@ -15,37 +15,35 @@ body {
 }
 
 .digit-window {
-  height: 100px;
   width: 60px;
+  height: 100px;
   overflow: hidden;
+  position: relative;
 }
 
 .digit-container {
   position: relative;
+  width: 60px;
   height: 200px;
-  transform: translateY(0);
+  transform: translateY(-100px);
   transition: transform 0.8s ease;
 }
 
 .digit {
-  position: absolute;
   width: 60px;
   height: 100px;
   line-height: 100px;
   text-align: center;
 }
 
-.old {
-  top: 0;
-}
-
 .new {
-  top: -100px;
+  height: 100px;
 }
 
-
-/* Animation */
+.old {
+  height: 100px;
+}
 
 .digit-container.move {
-  transform: translateY(100px);
+  transform: translateY(0);
 }
