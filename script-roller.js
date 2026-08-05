@@ -1,24 +1,15 @@
-const counter = document.getElementById("counter");
+const strip = document.querySelector(".digit-strip");
 
-function changeDigit(from, to) {
+const digitHeight = 100;
 
-  counter.innerHTML = `
-    <div class="digit-window">
-      <div class="digit-container">
-        <div class="digit new">${to}</div>
-        <div class="digit old">${from}</div>
-      </div>
-    </div>
-  `;
+// On démarre sur le 3
+strip.style.transform = `translateY(${-6 * digitHeight}px)`;
 
-  const container = document.querySelector(".digit-container");
-
-  requestAnimationFrame(() => {
-    container.classList.add("move");
-  });
-}
-
-
+// Deux secondes après,
+// on roule vers le 4
 setTimeout(() => {
-  changeDigit(3, 4);
-}, 2000);
+
+    strip.style.transform =
+        `translateY(${-5 * digitHeight}px)`;
+
+},2000);
