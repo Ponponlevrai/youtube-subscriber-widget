@@ -28,7 +28,27 @@ function moveTo(digit) {
       `translateY(${-10 * digitHeight}px)`;
 
     // Une fois l'animation terminée...
-    setTimeout(() => {
+// Une fois l'animation terminée...
+const onTransitionEnd = () => {
+
+  strip.removeEventListener("transitionend", onTransitionEnd);
+
+  // On coupe la transition
+  strip.style.transition = "none";
+
+  // On se replace instantanément sur le vrai 0
+  strip.style.transform =
+    `translateY(${-9 * digitHeight}px)`;
+
+  // On force le navigateur à appliquer ce changement
+  strip.offsetHeight;
+
+  // On remet la transition
+  strip.style.transition = "transform .8s ease";
+
+};
+
+strip.addEventListener("transitionend", onTransitionEnd);
 
       // On enlève la transition
       strip.style.transition = "none";
