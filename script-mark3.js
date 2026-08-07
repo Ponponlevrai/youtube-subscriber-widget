@@ -56,7 +56,7 @@ class Roller {
 
         for (let cycle = 0; cycle < 3; cycle++) {
 
-            for (let digit = 0; digit <= 9; digit++) {
+for (let digit = 9; digit >= 0; digit--) {
 
                 const element =
                     document.createElement("div");
