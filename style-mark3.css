@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #222;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.roller-window {
+    width: 70px;
+    height: 100px;
+
+    overflow: hidden;
+}
+
+
+.roller-strip {
+    will-change: transform;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.roller-digit {
+    width: 70px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 80px;
+    font-weight: bold;
+
+    line-height: 1;
+}
