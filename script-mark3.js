@@ -10,7 +10,30 @@ class Roller {
 
         this.currentDigit = startDigit;
 
-        this.position = 10 + startDigit;
+        /*
+            La colonne est organisée ainsi :
+
+            9
+            8
+            7
+            6
+            5
+            4
+            3
+            2
+            1
+            0
+
+            puis le même cycle deux fois.
+
+            Le chiffre 3 se trouve donc à la position 16
+            dans le cycle central.
+
+            Formule :
+            position = 19 - chiffre
+        */
+
+        this.position = 19 - startDigit;
 
 
         // Création de la fenêtre
@@ -42,21 +65,22 @@ class Roller {
     buildStrip() {
 
         /*
-            On construit plusieurs cycles :
+            On construit trois cycles identiques :
 
-            0 1 2 3 4 5 6 7 8 9
-            0 1 2 3 4 5 6 7 8 9
-            0 1 2 3 4 5 6 7 8 9
+            9 8 7 6 5 4 3 2 1 0
+            9 8 7 6 5 4 3 2 1 0
+            9 8 7 6 5 4 3 2 1 0
 
-            Le cycle central est celui utilisé normalement.
+            Le cycle central est utilisé normalement.
 
-            Les cycles du dessus et du dessous permettent
-            de franchir 9 -> 0 ou 0 -> 9 sans saut visible.
+            Les cycles supplémentaires permettent
+            de passer de 9 -> 0 et de 0 -> 9
+            sans faire défiler toute la colonne.
         */
 
         for (let cycle = 0; cycle < 3; cycle++) {
 
-for (let digit = 9; digit >= 0; digit--) {
+            for (let digit = 9; digit >= 0; digit--) {
 
                 const element =
                     document.createElement("div");
@@ -81,7 +105,7 @@ for (let digit = 9; digit >= 0; digit--) {
             `translateY(${-position * this.digitHeight}px)`;
 
         // Force le navigateur à appliquer immédiatement
-        // la position sans animation.
+        // la nouvelle position sans animation.
         this.strip.offsetHeight;
 
         this.strip.style.transition =
@@ -124,23 +148,37 @@ for (let digit = 9; digit >= 0; digit--) {
 
 
         /*
-            On ne choisit PAS le chemin le plus court.
+            Changement d'un seul chiffre vers l'avant :
 
-            Le sens dépend du changement réel :
+            3 -> 4
+            4 -> 5
+            ...
+            8 -> 9
+            9 -> 0
 
-            +1 abonnement :
-            8 -> 9 -> 0 -> 1
+            Avec notre colonne inversée, le chiffre suivant
+            se trouve une position PLUS HAUT.
 
-            -1 abonnement :
-            1 -> 0 -> 9 -> 8
-
-            Pour notre test, on détermine ici le déplacement
-            adjacent attendu.
+            Donc la bande descend visuellement.
         */
-
 
         const forwardDigit =
             (this.currentDigit + 1) % 10;
+
+
+        /*
+            Changement d'un seul chiffre vers l'arrière :
+
+            1 -> 0
+            0 -> 9
+            9 -> 8
+            ...
+
+            Le chiffre précédent se trouve une position
+            PLUS BAS dans le rouleau.
+
+            Donc la bande monte visuellement.
+        */
 
         const backwardDigit =
             (this.currentDigit + 9) % 10;
@@ -148,35 +186,55 @@ for (let digit = 9; digit >= 0; digit--) {
 
         if (newDigit === forwardDigit) {
 
-            // Avance d'une position
-            this.animateToPosition(
-                this.position + 1
-            );
+            /*
+                On avance d'une position dans le rouleau.
 
+                Exemple :
+
+                3
+                ↓
+                4
+
+                Le 4 arrive par le haut.
+            */
+
+            this.animateToPosition(
+                this.position - 1
+            );
         }
 
         else if (newDigit === backwardDigit) {
 
-            // Recule d'une position
-            this.animateToPosition(
-                this.position - 1
-            );
+            /*
+                On recule d'une position.
 
+                Exemple :
+
+                1
+                ↓
+                0
+
+                Le 0 arrive par le bas.
+            */
+
+            this.animateToPosition(
+                this.position + 1
+            );
         }
 
         else {
 
             /*
                 Pour l'instant, si on demande directement
-                un chiffre éloigné, on se replace dans
+                un chiffre éloigné, on le place dans
                 le cycle central.
 
-                La gestion des changements de plusieurs
-                unités sera faite par Display.
+                Les changements successifs seront gérés
+                plus tard par Display.
             */
 
             this.position =
-                10 + newDigit;
+                19 - newDigit;
 
             this.animateToPosition(
                 this.position
@@ -192,14 +250,21 @@ for (let digit = 9; digit >= 0; digit--) {
 
         /*
             Après une animation, on replace silencieusement
-            le rouleau dans le cycle central.
+            le rouleau dans son cycle central.
 
-            Visuellement, rien ne change :
-            les trois cycles sont identiques.
+            Cela permet de continuer à tourner indéfiniment.
+
+            Exemple :
+
+            9 -> 0
+
+            On utilise temporairement le 0 situé juste
+            au-dessus du 9, puis on replace silencieusement
+            le rouleau sur le 0 du cycle central.
         */
 
         const centralPosition =
-            10 + this.currentDigit;
+            19 - this.currentDigit;
 
 
         if (this.position !== centralPosition) {
@@ -277,6 +342,7 @@ function runNextTest() {
 
     }, roller.animationDuration);
 }
+
 
 
 // On attend 2 secondes avant de commencer.
