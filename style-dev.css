@@ -102,3 +102,18 @@ body {
         -1px  1px 0 black,
          1px  1px 0 black;
 }
+.subscriber-label {
+    margin-left: 50px;
+
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
