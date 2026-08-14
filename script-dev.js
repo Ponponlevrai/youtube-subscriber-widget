@@ -448,7 +448,7 @@ subscriberLabel.textContent =
 
 // Style du texte
 subscriberLabel.style.marginLeft =
-    "50px";
+    "30px";
 
 subscriberLabel.style.color =
     "white";
