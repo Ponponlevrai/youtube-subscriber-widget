@@ -280,41 +280,8 @@ class RollerDisplay {
             "roller-display";
 
 
-        /*
-            Le label "abonnés" existe déjà dans le HTML.
-
-            On place donc les rouleaux juste AVANT lui,
-            sans modifier le reste du système.
-        */
-
-        const subscriberLabel =
-            document.getElementById(
-                "subscriberLabel"
-            );
-
-
-        if (subscriberLabel) {
-
-            this.container.insertBefore(
-                this.rollerContainer,
-                subscriberLabel
-            );
-
-        } else {
-
-            /*
-                Sécurité : si le label n'existe pas,
-                le comportement précédent reste fonctionnel.
-            */
-
-            this.container.appendChild(
-                this.rollerContainer
-            );
-        }
-
-
         // ------------------------------------------------
-        // CHIFFRES INITIAUX
+        // CRÉATION DES 4 ROULEAUX
         // ------------------------------------------------
 
         const digits =
@@ -324,10 +291,6 @@ class RollerDisplay {
                 .split("")
                 .map(Number);
 
-
-        // ------------------------------------------------
-        // CRÉATION DES 4 ROULEAUX
-        // ------------------------------------------------
 
         for (
             let i = 0;
@@ -346,6 +309,11 @@ class RollerDisplay {
             );
         }
 
+
+        // Les rouleaux sont ajoutés au compteur
+        this.container.appendChild(
+            this.rollerContainer
+        );
     }
 
 
@@ -467,6 +435,47 @@ const subscriberContainer =
     );
 
 
+// ====================================================
+// CRÉATION DU TEXTE "ABONNÉS"
+// ====================================================
+
+const subscriberLabel =
+    document.createElement("div");
+
+subscriberLabel.textContent =
+    "abonnés";
+
+
+// Style du texte
+subscriberLabel.style.marginLeft =
+    "50px";
+
+subscriberLabel.style.color =
+    "white";
+
+subscriberLabel.style.fontSize =
+    "52px";
+
+subscriberLabel.style.fontWeight =
+    "bold";
+
+subscriberLabel.style.whiteSpace =
+    "nowrap";
+
+subscriberLabel.style.textShadow =
+    "-1px -1px 0 black, " +
+    "1px -1px 0 black, " +
+    "-1px 1px 0 black, " +
+    "1px 1px 0 black";
+
+
+// On le place dans le compteur.
+// Il est fixe : seuls les rouleaux bougent.
+subscriberContainer.appendChild(
+    subscriberLabel
+);
+
+
 let rollerDisplay = null;
 
 
@@ -510,6 +519,16 @@ function displaySubscribers(number) {
                 subscriberContainer,
                 number
             );
+
+        /*
+            Le label doit rester après les rouleaux.
+            Comme RollerDisplay ajoute sa propre structure
+            à la fin, on replace le label après celle-ci.
+        */
+
+        subscriberContainer.appendChild(
+            subscriberLabel
+        );
 
         return;
     }
