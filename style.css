@@ -24,9 +24,19 @@ body {
 }
 
 #channelName {
-    color: white;
     font-size: 52px;
     font-weight: bold;
+
+    background: linear-gradient(
+        to bottom,
+        #B5B5B5 0%,
+        #F2F2F2 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 
     text-shadow:
         -1px -1px 0 black,
@@ -89,12 +99,21 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: #FF0033;
-
     font-size: 80px;
     font-weight: bold;
 
     line-height: 1;
+
+    background: linear-gradient(
+        to bottom,
+        #D6001F 0%,
+        #FF0033 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 
     text-shadow:
         -1px -1px 0 black,
@@ -103,13 +122,23 @@ body {
          1px  1px 0 black;
 }
 .subscriber-label {
-    margin-left: 50px;
+    margin-left: 20px;
 
-    color: white;
     font-size: 52px;
     font-weight: bold;
 
     white-space: nowrap;
+
+    background: linear-gradient(
+        to bottom,
+        #B5B5B5 0%,
+        #F2F2F2 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 
     text-shadow:
         -1px -1px 0 black,
