@@ -1,46 +1,119 @@
 body {
-  margin: 0;
-  background: transparent;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    background: transparent;
+    font-family: Arial, sans-serif;
 }
 
 .widget {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
 }
 
 #avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid #D4AF37;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 2px solid #D4AF37;
 }
 
 .infos {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 #channelName {
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
 }
 
+/* ====================================================
+   COMPTEUR
+==================================================== */
+
 #subscriberCount {
-  color: #FF0033;
-  font-size: 42px;
-  font-weight: bold;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    display: flex;
+    align-items: center;
+
+    height: 100px;
+}
+
+/* ====================================================
+   CONTENEUR DES 4 ROULEAUX
+==================================================== */
+
+.roller-display {
+    display: flex;
+    gap: 0;
+}
+
+/* ====================================================
+   FENÊTRE D'UN ROULEAU
+==================================================== */
+
+.roller-window {
+    width: 42px;
+    height: 100px;
+
+    overflow: hidden;
+}
+
+/* ====================================================
+   BANDE
+==================================================== */
+
+.roller-strip {
+    will-change: transform;
+
+    transition:
+        transform 0.8s ease;
+}
+
+/* ====================================================
+   CHIFFRE
+==================================================== */
+
+.roller-digit {
+    width: 42px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #FF0033;
+
+    font-size: 80px;
+    font-weight: bold;
+
+    line-height: 1;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+.subscriber-label {
+    margin-left: 50px;
+
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
 }
