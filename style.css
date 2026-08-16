@@ -24,7 +24,8 @@ body {
 }
 
 #channelName {
-    color: white;
+    color: #F2F2F2;
+
     font-size: 52px;
     font-weight: bold;
 
@@ -32,7 +33,9 @@ body {
         -1px -1px 0 black,
          1px -1px 0 black,
         -1px  1px 0 black,
-         1px  1px 0 black;
+         1px  1px 0 black,
+
+         0 -2px 0 #B5B5B5;
 }
 
 /* ====================================================
@@ -100,7 +103,9 @@ body {
         -1px -1px 0 black,
          1px -1px 0 black,
         -1px  1px 0 black,
-         1px  1px 0 black;
+         1px  1px 0 black,
+
+         0 -2px 0 #D6001F;
 }
 .subscriber-label {
     margin-left: 50px;
