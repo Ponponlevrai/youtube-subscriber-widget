@@ -24,7 +24,7 @@ body {
 }
 
 #channelName {
-    color: #F2F2F2;
+    color: #F0F0F0;
 
     font-size: 52px;
     font-weight: bold;
@@ -35,7 +35,7 @@ body {
         -1px  1px 0 black,
          1px  1px 0 black,
 
-         0 -2px 0 #B5B5B5;
+         0 -6px 0 #8A8A8A;
 }
 
 /* ====================================================
