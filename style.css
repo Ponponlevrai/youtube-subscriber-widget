@@ -24,18 +24,18 @@ body {
 }
 
 #channelName {
-    color: #F0F0F0;
+    color: #EFEFEF;
 
     font-size: 52px;
     font-weight: bold;
 
     text-shadow:
+        0 -1px 0 #C8C8C8,
+
         -1px -1px 0 black,
          1px -1px 0 black,
         -1px  1px 0 black,
-         1px  1px 0 black,
-
-         0 -6px 0 #8A8A8A;
+         1px  1px 0 black;
 }
 
 /* ====================================================
