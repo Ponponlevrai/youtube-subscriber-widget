@@ -24,24 +24,9 @@ body {
 }
 
 #channelName {
+    color: white;
     font-size: 52px;
     font-weight: bold;
-
-    color: #F8F7F7;
-
-    background: linear-gradient(
-        to bottom,
-        #C9C4C4 0%,
-        #D8D3D3 25%,
-        #E8E3E3 50%,
-        #F8F7F7 100%
-    );
-
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    color: transparent;
-    -webkit-text-fill-color: transparent;
 
     text-shadow:
         -1px -1px 0 black,
