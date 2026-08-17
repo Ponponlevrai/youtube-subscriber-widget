@@ -24,24 +24,16 @@ body {
 }
 
 #channelName {
+    color: #FAFAFA;
+
     font-size: 52px;
     font-weight: bold;
 
-    background: linear-gradient(
-        to bottom,
-        #CFCFCF 0%,
-        #EAEAEA 35%,
-        #F8F8F8 100%
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    filter:
-        drop-shadow(-1px -1px 0 black)
-        drop-shadow(1px -1px 0 black)
-        drop-shadow(-1px 1px 0 black)
-        drop-shadow(1px 1px 0 black);
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
 }
 
 /* ====================================================
