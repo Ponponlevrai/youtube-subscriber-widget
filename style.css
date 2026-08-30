@@ -24,15 +24,23 @@ body {
 }
 
 #channelName {
-    color: #F8F7F7;
     font-size: 52px;
     font-weight: bold;
 
-    text-shadow:
-        -1px -1px 0 black,
-         1px -1px 0 black,
-        -1px  1px 0 black,
-         1px  1px 0 black;
+    background: linear-gradient(
+        to bottom,
+        #C9C4C4 0%,
+        #D8D4D4 35%,
+        #E8E5E5 65%,
+        #F8F7F7 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke: 1px black;
 }
 
 /* ====================================================
