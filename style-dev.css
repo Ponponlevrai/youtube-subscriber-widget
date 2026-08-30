@@ -97,18 +97,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(
-        to bottom,
-        #D4002A 0%,
-        #E00035 35%,
-        #EF003F 65%,
-        #FF0033 100%
-    );
-
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
+    color: #D4002A;
 
     font-size: 80px;
     font-weight: bold;
