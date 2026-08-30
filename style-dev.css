@@ -112,6 +112,29 @@ body {
 
          0 -2px 0 #D6001F;
 }
+.roller-digit {
+    position: relative;
+}
+
+.roller-digit::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(212, 0, 42, 0.35) 0%,
+        rgba(212, 0, 42, 0.15) 35%,
+        rgba(212, 0, 42, 0) 70%
+    );
+
+    pointer-events: none;
+}
 .subscriber-label {
     margin-left: 20px;
 
