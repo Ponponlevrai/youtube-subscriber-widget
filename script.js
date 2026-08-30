@@ -447,27 +447,11 @@ subscriberLabel.textContent =
 
 
 // Style du texte
+subscriberLabel.className =
+    "subscriber-label";
+
 subscriberLabel.style.marginLeft =
     "20px";
-
-subscriberLabel.style.color =
-    "white";
-
-subscriberLabel.style.fontSize =
-    "52px";
-
-subscriberLabel.style.fontWeight =
-    "bold";
-
-subscriberLabel.style.whiteSpace =
-    "nowrap";
-
-subscriberLabel.style.textShadow =
-    "-1px -1px 0 black, " +
-    "1px -1px 0 black, " +
-    "-1px 1px 0 black, " +
-    "1px 1px 0 black";
-
 
 // On le place dans le compteur.
 // Il est fixe : seuls les rouleaux bougent.
