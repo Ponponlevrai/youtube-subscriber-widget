@@ -24,6 +24,8 @@ body {
 }
 
 #channelName {
+    position: relative;
+
     font-size: 52px;
     font-weight: bold;
 
@@ -39,6 +41,21 @@ body {
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
+}
+
+#channelName::before {
+    content: attr(data-text);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: black;
+
+    z-index: -1;
+
+    transform: scale(1.02);
+    transform-origin: center;
 }
 
 /* ====================================================
