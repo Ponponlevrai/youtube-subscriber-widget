@@ -103,17 +103,29 @@ class Roller {
             ) {
 
                 const element =
-                    document.createElement("div");
+    document.createElement("div");
 
-                element.className =
-                    "roller-digit";
+element.className =
+    "roller-digit";
 
-                element.textContent =
-                    digit;
+element.textContent =
+    digit;
 
-                this.strip.appendChild(
-                    element
-                );
+
+// Couche d'assombrissement du haut
+const shade =
+    document.createElement("div");
+
+shade.className =
+    "roller-digit-shade";
+
+element.appendChild(
+    shade
+);
+
+this.strip.appendChild(
+    element
+);
             }
         }
     }
