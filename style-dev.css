@@ -26,7 +26,7 @@ body {
 #channelName {
     position: relative;
     isolation: isolate;
-    z-index: 1;
+    z-index: 0;
 
     font-size: 52px;
     font-weight: bold;
