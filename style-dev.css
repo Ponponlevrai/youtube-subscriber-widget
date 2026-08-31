@@ -90,6 +90,8 @@ body {
 ==================================================== */
 
 .roller-digit {
+    position: relative;
+    
     width: 42px;
     height: 100px;
 
