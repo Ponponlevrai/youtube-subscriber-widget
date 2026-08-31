@@ -24,33 +24,8 @@ body {
 }
 
 #channelName {
-    position: relative;
-    isolation: isolate;
-
     font-size: 52px;
     font-weight: bold;
-}
-
-#channelName::before {
-    content: attr(data-text);
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    color: black;
-    -webkit-text-fill-color: black;
-
-    z-index: 0;
-
-    transform: scale(1.02);
-    transform-origin: center;
-}
-
-#channelName::after {
-    content: attr(data-text);
-
-    position: relative;
 
     background: linear-gradient(
         to bottom,
@@ -60,12 +35,16 @@ body {
         #F8F7F7 100%
     );
 
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
-    z-index: 1;
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
 }
 
 /* ====================================================
