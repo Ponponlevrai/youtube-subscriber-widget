@@ -39,11 +39,6 @@ body {
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
-text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
 }
 
 /* ====================================================
@@ -135,9 +130,4 @@ text-shadow:
     -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
-text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
 }
