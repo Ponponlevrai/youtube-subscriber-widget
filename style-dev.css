@@ -98,6 +98,7 @@ body {
     align-items: center;
 
     color: #FF0033;
+-webkit-text-stroke: 0.5px #D4002A;
 
     font-size: 80px;
     font-weight: bold;
