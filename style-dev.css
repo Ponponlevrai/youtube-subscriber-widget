@@ -98,15 +98,6 @@ body {
     align-items: center;
 
     color: #D4002A;
-background: linear-gradient(
-    to bottom,
-    #B80024 0%,
-    #D4002A 45%,
-    #D4002A 100%
-);
--webkit-background-clip: text;
-background-clip: text;
--webkit-text-fill-color: transparent;
 
     font-size: 80px;
     font-weight: bold;
