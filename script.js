@@ -567,10 +567,18 @@ async function updateSubscribers() {
         // NOM DE LA CHAÎNE
         // ------------------------------------------------
 
-        document.getElementById(
-            "channelName"
-        ).textContent =
-            data.channelName;
+const channelName =
+    document.getElementById(
+        "channelName"
+    );
+
+channelName.textContent =
+    data.channelName;
+
+channelName.setAttribute(
+    "data-text",
+    data.channelName
+);
 
 
         // ------------------------------------------------
