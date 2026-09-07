@@ -40,7 +40,11 @@ body {
 
     -webkit-text-fill-color: transparent;
 
-    -webkit-text-stroke: 1px black;
+    filter:
+        drop-shadow(1px 0 0 black)
+        drop-shadow(-1px 0 0 black)
+        drop-shadow(0 1px 0 black)
+        drop-shadow(0 -1px 0 black);
 }
 
 /* ====================================================
@@ -131,7 +135,11 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
 
-    -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
 
-    -webkit-text-stroke: 1px black;
+    filter:
+        drop-shadow(1px 0 0 black)
+        drop-shadow(-1px 0 0 black)
+        drop-shadow(0 1px 0 black)
+        drop-shadow(0 -1px 0 black);
 }
